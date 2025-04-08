@@ -1,0 +1,243 @@
+/* Mike's CSS File */
+* { text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+
+body {font-family: verdana, arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh; } /*  Helps keeps footer at bottom */
+
+/* Container to center content */
+div#wrapper {  width: 1340px;
+              margin-left: auto;
+              margin-right: auto;
+              flex: 1; /* Allow wrapper to grow and take up available space */
+              background-color: #f4f6fc;
+              background-repeat: repeat-y;
+              background-position: top;
+              background-attachment: scroll;
+              display: flex;
+              flex-direction: column; }
+
+/* Header styling */
+header {height: 148px;
+        margin-bottom: 20px; }
+
+header h1, header p { text-indent: -999999999px; } /* to take header title off page */
+
+
+.index header {background: white url(images/banner.png) no-repeat; }
+.about header {background: white url(images/banner.png) no-repeat; }
+.recipes header {background: white url(images/banner.png) no-repeat; }
+
+
+/* Top navigation bar styling */
+.topnav { background-color: #f4f6fc;
+          overflow: hidden;
+          text-align: center;
+		   position: relative;
+		   height: 50px;
+           border-bottom: 3px solid #4169b2; }  /*  adds a bottom border for better separation */ 
+
+.topnav a {display: inline-block;
+           color: #000000;
+           padding: 14px 16px;
+           text-decoration: none;
+           font-size: 17px; }
+
+.topnav a:hover {background-color: #ddd;
+                 color: black; }
+
+.topnav a.active {background-color: #4169b2; /* indicates what page you are on in the navigation bar */
+                  color: #f4f6fc; }
+
+/* Content area will grow to fill the remaining space */
+.content { flex: 1;
+           padding-bottom: 50px; } /* Footer height to make space for footer */
+
+.about {text-align: justify;
+        padding: 10px;
+        line-height: 1.6; }
+
+.contentabout {font-size: 20px;
+               flex: 1;
+               padding: 20px; /* Adds spacing around the content */
+               max-width: 1340px;
+               margin: 0 auto;
+               text-align: justify;
+               overflow: hidden; }/* Ensures floated elements don't break the layout */
+
+/*For picutres in About page*/
+.profile1 {float: left;
+           max-width: 250px; /* Adjust as needed */
+           height: auto;
+           margin-right: 20px; /* Adds space between image and text */
+           margin-bottom: 20px;
+           clear: left; }/* Ensures it starts at the top */
+
+
+.profile2 {float: right;
+           max-width: 250px; /* Adjust as needed */
+           height: auto;
+           margin-left: 20px; /* Adds space between image and text */
+           margin-bottom: 20px;
+           clear: right; /* Ensures it starts at the correct spot */
+}
+
+
+/* Footer styling */
+.footer {background-color: #4169b2;
+         color: white;
+         text-align: center;
+		 font-size: 14px;
+         padding: 20px;
+         width: 100%; }
+.footer a {color: yellow; /* Changes link color to yellow */
+           text-decoration: none; } /* Removes underline */
+
+.footer a:hover {color: red; } /* Changes color when hovered */
+.table1 {border-top: 2px solid #4169b2;
+        border-bottom: 2px solid #4169b2; }
+.table2 {border-bottom: 2px solid #4169b2; }
+td { text-align: left; }
+
+
+/* Container for the grid */
+.image-grid {display: grid; /*Allows elements to be displayed in a grid layout */
+             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* defines the columns of the grid and automatically adjusts them */
+             gap: 20px; /* Spacing between items */
+             padding: 20px; /* Padding around the grid */
+	         max-width: 1200px; /* Limits the grid's width */
+	         margin: 0 auto; /* Center the grid horizontally */
+}
+
+/* Style for each grid item */
+.image-item {display: block; /* Ensures the entire image is clickable */
+             border-radius: 8px; /* Adds rounded corners */
+             overflow: hidden; /* Ensures the image doesn't overflow its container */
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+             height: 200px; }/* Fixed height for uniform images */
+
+
+/* Style for images */
+.image-item img {width: 100%; /* Ensures the image takes up the full width of its container */
+                 height: 100%; /* Forces the image to fill the container's height */
+                 object-fit: cover; /* Ensures the image covers the space within the container */
+                 display: block; }/* Ensures there's no extra space below the image */
+
+
+		   
+ /* Main container for the recipe */		   
+.container-recipes {width: auto;
+                    max-width: 1340px;
+                    background: #f4f6fc;
+                    padding: 10px; }
+             
+  /* Layout for title and image */
+.header-container {display: flex; /* Places the image and text side by side */
+                    align-items: center; /* Aligns them vertically */
+                     gap: 20px; } /* Creates spacing between them */
+			
+.header-text {flex: 1; } /* Allows the text to take the available space */
+   
+ h1 {font-family:"Trebuchet MS", sans-serif; 
+     font-size: 36px; /* Adjust size if needed */
+     font-weight: bold; /* Make it bold */
+     margin: 0;}
+	 
+h2, h5 {text-align: justify; }  
+  
+.subtitle {font-size: 14px;
+	       text-align: justify;
+           margin: 5px 0 0 0; }
+    
+.recipes-image {width: 30%; /* Ensures the image takes half the width */
+                height: auto; /* Maintains the image's aspect ratio */
+	            object-fit: cover; /* Ensures the image retains its shape without distortion */}
+   
+/* Styling for recipe info (prep time, cook time, servings) */
+.recipe-info {width: 12%;
+	          text-align: justify; /* Aligns text to the left */
+              margin-left: 0; /* Ensures it starts from the left */
+              padding-left: 0; /* Removes any extra padding */
+	          margin-bottom: 20px;
+              margin-top: 10px; }
+  
+/* Layout for ingredients and instructions */
+.recipe-sections {display: flex; /* Places ingredients and instructions side by side */
+                  gap: 20px; } /* Creates spacing between them */
+        
+.ingredients {flex: 1; /* Ensures both sections take equal width */
+	          font-family:"Trebuchet MS", sans-serif;
+		      font-size:24px;}
+			
+.instructions {flex: 2; /* Ensures both sections take equal width */
+	           font-family:"Trebuchet MS", sans-serif;
+			   font-size:24px;}
+	
+/*Styling for lists*/	
+ul, ol {list-style-position: outside; /* Keeps numbers aligned in the left margin */
+        font-size: 18px;
+	    padding-left: 40px; }/* Ensures numbers align with text */
+       
+li {text-align: left; /* Ensures text doesn't indent too much */
+    margin-left: 0; /* Prevents unnecessary extra spacing */ }
+	
+.instructions ol {list-style: none; /* Removes default numbering */
+	              counter-reset: step-counter; /* Initializes counter */
+                  padding-left: 0; }/* Aligns with the left edge */
+
+
+.instructions li {counter-increment: step-counter; /* Increases counter for each item */
+                  position: relative; /* Positioning for the custom numbering */
+                  padding-left: 75px; } /* Adjusts space between number and text */
+
+
+.instructions li::before {content: "Step" counter(step-counter) ":"; /* Custom numbering */
+                          font-weight: bold;
+                          position: absolute;
+                          left: 0; /* Positions the custom number to the left */
+                          color: #333;} /* Adjust color */
+
+
+.blue-line {height: 2px; /* thicnkness of line */
+            background-color: #4169b2;
+            width: 100%;
+			margin: 20px 0; }
+			
+		
+
+
+.title-info-container {display: flex; /* Aligns elements in a row */
+                       justify-content: space-between; /* Distributes space between them */
+                       align-items: center; /* Aligns them vertically */
+                       gap: 20px; } /* Adds spacing between subtitle and recipe info */
+
+
+.subtitle { flex: 2; /* Allows it to take available space */
+            text-align: justify; } 
+
+.recipe-info {flex: 1; /* Allows it to take available space */
+              text-align: left; }
+
+.image-credit {font-size: 12px; /*credit for photo*/
+               color: #777;
+               text-align: left;
+               margin-top: 5px;} 
+			   
+.page-title {text-align: left; 
+             font-family:"Trebuchet MS", sans-serif;
+             margin-top: 20px;} 
+			 
+.recipes-container {padding: 10px; /* Adds padding inside the recipe container */
+                    background-color: #ffffff; /* Container background color */
+    
+  
